@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/ic_action_perm_data_setting"
+        android:layout_gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+    <TextView
+        android:id="@+id/activity_detalles_txtbienvenido"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/activity_detalles_btnperfil"
+            android:textAllCaps="false"
+            android:text="Ver Perfil"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/activity_detalles_btnlista"
+            android:textAllCaps="false"
+            android:text="Lista Perfil"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/activity_detalles_fldetalles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>
