@@ -2,5 +2,5 @@
     <string name="app_name">Ejercicio1</string>
     <string name="activity_main_title">LOGIN</string>
     <string name="activity_detalles_title">DETAILS</string>
-
+    <string name="activity_detallesmas_title">FRAGMENT DETAILS</string>
 </resources>

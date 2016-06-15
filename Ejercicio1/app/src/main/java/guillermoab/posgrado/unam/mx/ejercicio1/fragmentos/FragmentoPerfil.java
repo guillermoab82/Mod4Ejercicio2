@@ -32,11 +32,11 @@ public class FragmentoPerfil extends Fragment{
         TextView txtPerfil = (TextView) view.findViewById(R.id.fragment_perfil_txtuser);
         Bundle bundle = getArguments();
         String usuario = bundle.getString("usuario");
-        Character letra = usuario.charAt(0);
-        if((letra>65 && letra<77) || (letra>97 && letra<109)){
-            imgPerfil.setImageResource(R.drawable.ic_action_account_child);
+        int letra = usuario.charAt(0);
+        if((letra>=65 && letra<=77) || (letra>=97 && letra<=109)){
+           imgPerfil.setImageResource(R.drawable.ic_action_account_child);
         }else{
-            if((letra>65 && letra<77) || (letra>97 && letra<109)){
+            if((letra>=78 && letra<=90) || (letra>=110 && letra<=122)){
                 imgPerfil.setImageResource(R.drawable.ic_action_face_unlock);
             }
         }

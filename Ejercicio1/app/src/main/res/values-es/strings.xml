@@ -2,4 +2,5 @@
 <resources>
     <string name="activity_main_title">ACCESO</string>
     <string name="activity_detalles_title">DETALLES</string>
+    <string name="activity_detallesmas_title">DETALLES FRAGMENT</string>
 </resources>

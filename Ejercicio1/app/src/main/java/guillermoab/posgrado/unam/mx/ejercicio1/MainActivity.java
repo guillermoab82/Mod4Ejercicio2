@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run(){
                cargando.setVisibility(View.GONE);
-                if(usuario!="" && pwd!=""){//Nos importa que tanto el usuario como el pass no sean vacíos
+                if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
                     Toast.makeText(getApplicationContext(),"Ingresando",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
                     intent.putExtra("usuario",usuario);

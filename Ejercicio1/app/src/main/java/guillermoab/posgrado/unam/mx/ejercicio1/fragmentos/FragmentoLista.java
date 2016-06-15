@@ -1,6 +1,7 @@
 package guillermoab.posgrado.unam.mx.ejercicio1.fragmentos;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import guillermoab.posgrado.unam.mx.ejercicio1.ActivityDetallesMas;
 import guillermoab.posgrado.unam.mx.ejercicio1.R;
 import guillermoab.posgrado.unam.mx.ejercicio1.adaptadores.AdaptadorListaElemento;
 import guillermoab.posgrado.unam.mx.ejercicio1.modelos.ModeloElemento;
@@ -41,7 +43,12 @@ public class FragmentoLista extends Fragment{
                 AdaptadorListaElemento adaptador = (AdaptadorListaElemento) parent.getAdapter();
                 ModeloElemento modelItem = adaptador.getItem(position);
                 ModeloElemento modelItem2 = arreglodatos.get(position);
-                Toast.makeText(getActivity(),modelItem2.id,Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getActivity(), ActivityDetallesMas.class);
+                intent.putExtra("Nombre",modelItem2.elemento);
+                intent.putExtra("id",modelItem2.id);
+                intent.putExtra("resourceid",modelItem2.resourceid);
+                startActivity(intent);
+                //Toast.makeText(getActivity(),modelItem2.id,Toast.LENGTH_SHORT).show();
             }
         });
         final EditText listaElementos = (EditText) view.findViewById(R.id.fragment_lista_txtuser);
