@@ -22,6 +22,7 @@ public class ActivityDetallesMas extends AppCompatActivity implements View.OnCli
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detallesmas);
+        findViewById(R.id.activity_detalles2_btnreturn).setOnClickListener(this);
         if(getIntent()!=null) {
             nombre = getIntent().getExtras().getString("Nombre");
             id = getIntent().getExtras().getString("id");
@@ -37,6 +38,10 @@ public class ActivityDetallesMas extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.activity_detalles2_btnreturn:
+                finish();
+                break;
+        }
     }
 }

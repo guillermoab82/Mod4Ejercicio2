@@ -25,14 +25,6 @@
             android:layout_gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/activity_detalles2_btnsalir"
-            android:layout_weight="1"
-            android:textAllCaps="false"
-            android:text="Salir"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>
