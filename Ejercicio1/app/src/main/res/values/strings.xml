@@ -3,4 +3,8 @@
     <string name="activity_main_title">LOGIN</string>
     <string name="activity_detalles_title">DETAILS</string>
     <string name="activity_detallesmas_title">FRAGMENT DETAILS</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_in">Login</string>
+    <string name="user">User</string>
+    <string name="pwd">Password</string>
 </resources>

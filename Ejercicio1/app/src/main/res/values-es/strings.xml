@@ -3,4 +3,8 @@
     <string name="activity_main_title">ACCESO</string>
     <string name="activity_detalles_title">DETALLES</string>
     <string name="activity_detallesmas_title">DETALLES FRAGMENT</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="btn_in">Ingresar</string>
+    <string name="user">Usuario</string>
+    <string name="pwd">Contraseña</string>
 </resources>
