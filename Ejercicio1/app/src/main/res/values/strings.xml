@@ -7,4 +7,11 @@
     <string name="btn_in">Login</string>
     <string name="user">User</string>
     <string name="pwd">Password</string>
+    <string name="delete_title">Delete</string>
+    <string name="delete_message">Do you want to delete item</string>
+    <string name="session_time">Session lenght in seconds</string>
+    <string name="NoData">No Data User!!!</string>
+    <string name="welcome">Welcome to the system </string>
+    <string name="msj_in">Login!!!</string>
+    <string name="msj_error_in">ERROR!!! Data necessary</string>
 </resources>

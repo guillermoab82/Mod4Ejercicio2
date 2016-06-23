@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".ActivityDetalles" android:label="@string/activity_detalles_title"/>
         <activity android:name=".ActivityDetallesMas" android:label="@string/activity_detallesmas_title"/>
+        <service android:name=".service.ServiceTimer"/>
     </application>
 
 </manifest>

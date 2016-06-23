@@ -3,4 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="main_btnText">25sp</dimen>
+    <dimen name="txttimer">18sp</dimen>
+    <dimen name="imgdetails">80dp</dimen>
 </resources>

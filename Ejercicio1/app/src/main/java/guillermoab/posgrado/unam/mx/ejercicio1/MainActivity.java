@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import guillermoab.posgrado.unam.mx.ejercicio1.service.ServiceTimer;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText txtUser;
     private EditText txtPass;
@@ -44,12 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run(){
                cargando.setVisibility(View.GONE);
                 if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
-                    Toast.makeText(getApplicationContext(),"Ingresando",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.msj_in,Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
                     intent.putExtra("usuario",usuario);
                     startActivity(intent);
+                    startService(new Intent(getApplicationContext(), ServiceTimer.class));
                 }else{
-                    Toast.makeText(getApplicationContext(),"ERROR!!! Datos necesarios.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.msj_error_in,Toast.LENGTH_LONG).show();
                 }
             }
         },1000*3);

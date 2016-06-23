@@ -7,4 +7,11 @@
     <string name="btn_in">Ingresar</string>
     <string name="user">Usuario</string>
     <string name="pwd">Contraseña</string>
+    <string name="delete_title">Eliminar</string>
+    <string name="delete_message">Desea eliminar el elemento</string>
+    <string name="session_time">Tiempo de sesión en segundos</string>
+    <string name="NoData">No hay dato!!!</string>
+    <string name="welcome">Bienvenid@ al sistema </string>
+    <string name="msj_in">Ingresando!!!</string>
+    <string name="msj_error_in">ERROR!!! Datos necesarios</string>
 </resources>
