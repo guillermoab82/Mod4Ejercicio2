@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/txtUser_Register"
+        android:hint="@string/txtuser_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/txtPassword_Register"
+        android:hint="@string/txtpwd_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnResgister_User"
+        android:text="@string/btnuser_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

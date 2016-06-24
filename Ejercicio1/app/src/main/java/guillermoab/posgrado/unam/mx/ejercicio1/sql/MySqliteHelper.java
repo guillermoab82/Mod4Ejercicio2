@@ -19,7 +19,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ITEM_RESOURCE= "resource_id";
 
     private static final String CREATE_ITEM_TABLE = "create table "+TABLE_ITEM_NAME+
-            "("+COLUMN_ITEM_NAME+" integer primary key autoincrement,"+
+            "("+COLUMN_ITEM_ID+" integer primary key autoincrement,"+
             COLUMN_ITEM_NAME+" text not null,"+
             COLUMN_ITEM_DESC+" text not null,"+
             COLUMN_ITEM_RESOURCE+" integer not null)";

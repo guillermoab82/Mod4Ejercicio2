@@ -1,5 +1,6 @@
 package guillermoab.posgrado.unam.mx.ejercicio1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtPass = (EditText) findViewById(R.id.activity_main_txt_pwd);
         btnIngresar = (Button) findViewById(R.id.activity_main_btn_ingresar);
         btnIngresar.setOnClickListener(this);
+        findViewById(R.id.activity_main_btn_register).setOnClickListener(this);
         cargando = (View) findViewById(R.id.activity_main_pb_cargando);
     }
 
@@ -34,7 +36,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.activity_main_btn_ingresar:
                 abriractividad();
                 break;
+            case R.id.activity_main_btn_register:
+                launchRegister();
         }
+    }
+
+    private void launchRegister() {
+        Intent intent = new Intent(getApplicationContext(), ActivityRegister.class);
+        startActivity(intent);
     }
 
     private void abriractividad() {

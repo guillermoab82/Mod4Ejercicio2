@@ -14,4 +14,9 @@
     <string name="welcome">Bienvenid@ al sistema </string>
     <string name="msj_in">Ingresando!!!</string>
     <string name="msj_error_in">ERROR!!! Datos necesarios</string>
+    <string name="chk_rememberme">Recordar</string>
+    <string name="txtuser_register">Usuario</string>
+    <string name="txtpwd_register">Contraseña</string>
+    <string name="btnuser_register">Enviar</string>
+    <string name="activity_register_title">REGISTRO DE USUARIO</string>
 </resources>

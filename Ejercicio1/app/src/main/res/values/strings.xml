@@ -14,4 +14,9 @@
     <string name="welcome">Welcome to the system </string>
     <string name="msj_in">Login!!!</string>
     <string name="msj_error_in">ERROR!!! Data necessary</string>
+    <string name="chk_rememberme">Remember Me</string>
+    <string name="txtuser_register">User</string>
+    <string name="txtpwd_register">Password</string>
+    <string name="btnuser_register">Send</string>
+    <string name="activity_register_title">USER REGISTER</string>
 </resources>
