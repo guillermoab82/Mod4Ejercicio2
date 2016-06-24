@@ -20,4 +20,5 @@
     <string name="btnuser_register">Send</string>
     <string name="activity_register_title">USER REGISTER</string>
     <string name="msj_error_user">User not found!!!</string>
+    <string name="msj_error_data">There was an error loading data!!!</string>
 </resources>

@@ -30,8 +30,8 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
         @Override
         public void onReceive(Context context, Intent intent) {
             int counter = intent.getExtras().getInt("timer");
-            String msg = String.valueOf(R.string.session_time);
-            txtTimer.setText(String.format(msg + "%s",counter));
+            String msg = getResources().getText(R.string.session_time).toString();
+            txtTimer.setText(String.format(msg + "%s ",counter));
         }
     };
 
@@ -42,17 +42,18 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
         txt = (TextView) findViewById(R.id.activity_detalles_txtbienvenido);
         if(getIntent()!=null){
             userName=getIntent().getExtras().getString("usuario");
-            txt.setText(R.string.welcome + userName);
+            txt.setText(getResources().getText(R.string.welcome)+ " "+ userName);
             btnPerfil=(Button) findViewById(R.id.activity_detalles_btnperfil);
             btnPerfil.setOnClickListener(this);
             btnLista = (Button) findViewById(R.id.activity_detalles_btnlista);
             btnLista.setOnClickListener(this);
             txtTimer = (TextView) findViewById(R.id.activity_detalles_txttimer);
         }else{
-            Toast.makeText(getApplicationContext(),R.string.NoData,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getResources().getText(R.string.NoData),Toast.LENGTH_SHORT).show();
             finish();
         }
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){

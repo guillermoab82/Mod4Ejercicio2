@@ -42,7 +42,7 @@ public class ActivityRegister extends AppCompatActivity {
                     userDataSource.saveUser(modelUser);
                     finish();
                 }else{
-                    Toast.makeText(getApplicationContext(),R.string.msj_error_in,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_in),Toast.LENGTH_SHORT).show();
                 }
             }
         });

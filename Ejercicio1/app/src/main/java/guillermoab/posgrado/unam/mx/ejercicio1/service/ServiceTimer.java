@@ -21,6 +21,7 @@ public class ServiceTimer extends Service {
             handler.postDelayed(runnable,1000);
             Intent i = new Intent(ACTION_SEND_TIMER);
             i.putExtra("timer",counter);
+            sendBroadcast(i);
         }
     };
     @Nullable

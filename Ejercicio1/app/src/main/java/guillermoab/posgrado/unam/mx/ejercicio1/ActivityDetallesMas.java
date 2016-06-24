@@ -32,7 +32,7 @@ public class ActivityDetallesMas extends AppCompatActivity implements View.OnCli
             name.setText(nombre + "\n"+ id);
             img.setImageResource(resourceid);
         }else{
-            Toast.makeText(getApplicationContext(),"Hubo un error al cargar los datos!!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_data),Toast.LENGTH_SHORT).show();
         }
     }
 

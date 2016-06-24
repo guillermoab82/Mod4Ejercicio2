@@ -3,17 +3,19 @@
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent">
     <TextView
+        android:id="@+id/activity_detalles_txtsession"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/txttimer"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
         android:id="@+id/activity_detalles_txttimer"
         android:gravity="right"
         android:textSize="@dimen/txttimer"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <ImageView
-        android:src="@drawable/ic_action_perm_data_setting"
-        android:layout_gravity="center"
-        android:layout_width="@dimen/imgdetails"
-        android:layout_height="@dimen/imgdetails" />
     <TextView
         android:id="@+id/activity_detalles_txtbienvenido"
         android:textSize="20sp"

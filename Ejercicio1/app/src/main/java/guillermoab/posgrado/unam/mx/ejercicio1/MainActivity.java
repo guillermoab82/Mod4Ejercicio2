@@ -63,16 +63,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
                     List<ModelUser> modelUserList=userDataSource.getUser(usuario,pwd);
                     if(!modelUserList.isEmpty()){
-                        Toast.makeText(getApplicationContext(),R.string.msj_in,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_in),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
                         intent.putExtra("usuario",modelUserList.get(0).name);
                         startActivity(intent);
                         startService(new Intent(getApplicationContext(), ServiceTimer.class));
                     }else{
-                        Toast.makeText(getApplicationContext(),R.string.msj_error_user,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_user),Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(getApplicationContext(),R.string.msj_error_in,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_in),Toast.LENGTH_LONG).show();
                 }
             }
         },1000*3);
