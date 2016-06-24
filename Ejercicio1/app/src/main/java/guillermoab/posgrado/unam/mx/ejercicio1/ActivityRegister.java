@@ -23,6 +23,7 @@ public class ActivityRegister extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        userDataSource = new UserDataSource(getApplicationContext());
 
         final EditText mUser = (EditText) findViewById(R.id.txtUser_Register);
         final EditText mPwd = (EditText) findViewById(R.id.txtPassword_Register);
