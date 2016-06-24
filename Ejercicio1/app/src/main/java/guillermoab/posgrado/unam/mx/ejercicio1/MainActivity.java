@@ -11,13 +11,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
+import guillermoab.posgrado.unam.mx.ejercicio1.modelos.ModelUser;
 import guillermoab.posgrado.unam.mx.ejercicio1.service.ServiceTimer;
+import guillermoab.posgrado.unam.mx.ejercicio1.sql.UserDataSource;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText txtUser;
     private EditText txtPass;
     private Button btnIngresar;
     private View cargando;
+    private UserDataSource userDataSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnIngresar.setOnClickListener(this);
         findViewById(R.id.activity_main_btn_register).setOnClickListener(this);
         cargando = (View) findViewById(R.id.activity_main_pb_cargando);
+        userDataSource = new UserDataSource(getApplicationContext());
     }
 
     @Override
@@ -55,11 +61,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run(){
                cargando.setVisibility(View.GONE);
                 if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
-                    Toast.makeText(getApplicationContext(),R.string.msj_in,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
-                    intent.putExtra("usuario",usuario);
-                    startActivity(intent);
-                    startService(new Intent(getApplicationContext(), ServiceTimer.class));
+                    List<ModelUser> modelUserList=userDataSource.getUser(usuario,pwd);
+                    if(!modelUserList.isEmpty()){
+                        Toast.makeText(getApplicationContext(),R.string.msj_in,Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
+                        intent.putExtra("usuario",modelUserList.get(0).name);
+                        startActivity(intent);
+                        startService(new Intent(getApplicationContext(), ServiceTimer.class));
+                    }else{
+                        Toast.makeText(getApplicationContext(),R.string.msj_error_user,Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     Toast.makeText(getApplicationContext(),R.string.msj_error_in,Toast.LENGTH_LONG).show();
                 }

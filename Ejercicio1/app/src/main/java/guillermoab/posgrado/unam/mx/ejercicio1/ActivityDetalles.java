@@ -42,16 +42,16 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
         txt = (TextView) findViewById(R.id.activity_detalles_txtbienvenido);
         if(getIntent()!=null){
             userName=getIntent().getExtras().getString("usuario");
+            txt.setText(R.string.welcome + userName);
+            btnPerfil=(Button) findViewById(R.id.activity_detalles_btnperfil);
+            btnPerfil.setOnClickListener(this);
+            btnLista = (Button) findViewById(R.id.activity_detalles_btnlista);
+            btnLista.setOnClickListener(this);
+            txtTimer = (TextView) findViewById(R.id.activity_detalles_txttimer);
         }else{
             Toast.makeText(getApplicationContext(),R.string.NoData,Toast.LENGTH_SHORT).show();
+            finish();
         }
-        txt.setText(R.string.welcome + userName);
-        btnPerfil=(Button) findViewById(R.id.activity_detalles_btnperfil);
-        btnPerfil.setOnClickListener(this);
-        btnLista = (Button) findViewById(R.id.activity_detalles_btnlista);
-        btnLista.setOnClickListener(this);
-        txtTimer = (TextView) findViewById(R.id.activity_detalles_txttimer);
-
     }
     @Override
     public void onClick(View v) {

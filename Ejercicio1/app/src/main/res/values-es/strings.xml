@@ -19,4 +19,5 @@
     <string name="txtpwd_register">Contraseña</string>
     <string name="btnuser_register">Enviar</string>
     <string name="activity_register_title">REGISTRO DE USUARIO</string>
+    <string name="msj_error_user">Usuario no registrado!!!</string>
 </resources>
