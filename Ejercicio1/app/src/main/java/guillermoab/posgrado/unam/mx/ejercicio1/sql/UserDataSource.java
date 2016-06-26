@@ -42,12 +42,12 @@ public class UserDataSource {
             String userPWD = cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_PWD));
             String userLastSession = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_LASTSESSION));
             String userTimeIn = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_TIMEINAPP));
-            ModelUser modelUser = new ModelUser();
-            modelUser.id=id;
+            ModelUser modelUser = new ModelUser(id,userName,userPWD,userLastSession,userTimeIn,"0");
+            /*modelUser.id=id;
             modelUser.name=userName;
             modelUser.pwd=userPWD;
             modelUser.last_session=userLastSession;
-            modelUser.time_in=userTimeIn;
+            modelUser.time_in=userTimeIn;*/
             modelUserList.add(modelUser);
         }
         return modelUserList;
@@ -61,12 +61,12 @@ public class UserDataSource {
             String userPWD = cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_PWD));
             String userLastSession = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_LASTSESSION));
             String userTimeIn = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_TIMEINAPP));
-            ModelUser modelUser = new ModelUser();
-            modelUser.id=id;
+            ModelUser modelUser = new ModelUser(id,userName,userPWD,userLastSession,userTimeIn,"0");
+            /*modelUser.id=id;
             modelUser.name=userName;
             modelUser.pwd=userPWD;
             modelUser.last_session=userLastSession;
-            modelUser.time_in=userTimeIn;
+            modelUser.time_in=userTimeIn;*/
             modelUserList.add(modelUser);
         }
         return modelUserList;
@@ -80,12 +80,12 @@ public class UserDataSource {
             String userPWD = cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_PWD));
             String userLastSession = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_LASTSESSION));
             String userTimeIn = cursor.getColumnName(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_USER_TIMEINAPP));
-            ModelUser modelUser = new ModelUser();
-            modelUser.id=id;
+            ModelUser modelUser = new ModelUser(id,userName,userPWD,userLastSession,userTimeIn,"0");
+            /*modelUser.id=id;
             modelUser.name=userName;
             modelUser.pwd=userPWD;
             modelUser.last_session=userLastSession;
-            modelUser.time_in=userTimeIn;
+            modelUser.time_in=userTimeIn;*/
             modelUserList.add(modelUser);
         }
         return modelUserList;

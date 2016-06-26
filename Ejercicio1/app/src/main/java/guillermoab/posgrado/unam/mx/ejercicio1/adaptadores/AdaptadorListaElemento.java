@@ -33,7 +33,7 @@ public class AdaptadorListaElemento extends ArrayAdapter<ModeloElemento> {
         ImageView imgElemento = (ImageView) convertView.findViewById(R.id.lista_renglon_imgrenglon);
         ModeloElemento modelItem = getItem(position);
         txtTituloElemento.setText(modelItem.elemento);
-        txtDescripcionElemento.setText(modelItem.id);
+        txtDescripcionElemento.setText(modelItem.description);
         imgElemento.setImageResource(modelItem.resourceid);
         return convertView;
     }

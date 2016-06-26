@@ -34,11 +34,11 @@ public class ActivityRegister extends AppCompatActivity {
                 String pwd=mPwd.getText().toString();
                 String date= new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
                 if(!TextUtils.isEmpty(user)&& !TextUtils.isEmpty(pwd)){
-                    ModelUser modelUser = new ModelUser();
-                    modelUser.name=user;
+                    ModelUser modelUser = new ModelUser(0,user,pwd,date,"0",null);
+                    /*modelUser.name=user;
                     modelUser.pwd=pwd;
                     modelUser.last_session=date;
-                    modelUser.time_in="0";
+                    modelUser.time_in="0";*/
                     userDataSource.saveUser(modelUser);
                     finish();
                 }else{

@@ -100,6 +100,7 @@ public class FragmentoLista extends Fragment{
                     item.description="Descripcion "+contador;
                     item.resourceid=isImg?R.drawable.ic_action_accessibility:R.drawable.ic_action_face_unlock;
                     //arreglodatos.add(item); Se comenta por que ahora se guarda en una db
+                    itemDataSource.saveItem(item);
                     listaVista.setAdapter(new AdaptadorListaElemento(getActivity(),itemDataSource.getAllItems()));
                     isImg=!isImg;
                     contador++;

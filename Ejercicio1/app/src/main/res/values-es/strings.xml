@@ -17,8 +17,9 @@
     <string name="chk_rememberme">Recordar</string>
     <string name="txtuser_register">Usuario</string>
     <string name="txtpwd_register">Contraseña</string>
-    <string name="btnuser_register">Enviar</string>
+    <string name="btnuser_register">Registrar Usuario</string>
     <string name="activity_register_title">REGISTRO DE USUARIO</string>
     <string name="msj_error_user">Usuario no registrado!!!</string>
     <string name="msj_error_data">Hubo un error al cargar los datos!!!</string>
+    <string name="date">Última sesión</string>
 </resources>

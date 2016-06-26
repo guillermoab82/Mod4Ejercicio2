@@ -24,14 +24,18 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
     private TextView txt;
     private Button btnPerfil;
     private Button btnLista;
+    private int userID;
     private String userName;
+    private String lastDate;
     private TextView txtTimer;
+    private TextView txtFecha;
+
     private BroadcastReceiver broadcastReceiver=new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             int counter = intent.getExtras().getInt("timer");
             String msg = getResources().getText(R.string.session_time).toString();
-            txtTimer.setText(String.format(msg + "%s ",counter));
+            txtTimer.setText(String.format(msg + "%s  ",counter));
         }
     };
 
@@ -48,6 +52,9 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
             btnLista = (Button) findViewById(R.id.activity_detalles_btnlista);
             btnLista.setOnClickListener(this);
             txtTimer = (TextView) findViewById(R.id.activity_detalles_txttimer);
+            txtFecha = (TextView) findViewById(R.id.activity_detalles_txtsession);
+            lastDate=getIntent().getExtras().getString("date");
+            txtFecha.setText(getResources().getText(R.string.date)+" "+lastDate);
         }else{
             Toast.makeText(getApplicationContext(),getResources().getText(R.string.NoData),Toast.LENGTH_SHORT).show();
             finish();

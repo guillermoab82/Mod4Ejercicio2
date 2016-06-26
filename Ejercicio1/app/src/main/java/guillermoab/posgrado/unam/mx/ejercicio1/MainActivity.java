@@ -8,14 +8,18 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import guillermoab.posgrado.unam.mx.ejercicio1.modelos.ModelUser;
 import guillermoab.posgrado.unam.mx.ejercicio1.service.ServiceTimer;
 import guillermoab.posgrado.unam.mx.ejercicio1.sql.UserDataSource;
+import guillermoab.posgrado.unam.mx.ejercicio1.util.PreferenceUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText txtUser;
@@ -23,6 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnIngresar;
     private View cargando;
     private UserDataSource userDataSource;
+    private PreferenceUtil util;
+    private CheckBox chkRemember;
+    private int lastTime=0;
+    private String last_Time;
+    private String shared_date="";
+    private String date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +43,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnIngresar = (Button) findViewById(R.id.activity_main_btn_ingresar);
         btnIngresar.setOnClickListener(this);
         findViewById(R.id.activity_main_btn_register).setOnClickListener(this);
+        chkRemember = (CheckBox) findViewById(R.id.activity_chk_rememberme);
         cargando = (View) findViewById(R.id.activity_main_pb_cargando);
         userDataSource = new UserDataSource(getApplicationContext());
+        //Comenzemos con la validación de sharedpreference
+        util = new PreferenceUtil(getApplicationContext());
+        ModelUser modeluser = util.getUser();
+        if(modeluser!=null){
+            if(modeluser.name.trim().length()>0 && modeluser.pwd.trim().length()>0){
+                txtUser.setText(modeluser.name.toString());
+                txtPass.setText(modeluser.pwd.toString());
+            }
+            if(modeluser.time_stamp.trim().length()>0){
+                lastTime = Integer.valueOf(modeluser.time_stamp.toString());
+            }else {
+                last_Time="";
+            }
+            if(modeluser.last_session.trim().length()>0){
+                shared_date=modeluser.last_session.toString();
+            }
+        }
     }
 
     @Override
@@ -63,9 +92,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
                     List<ModelUser> modelUserList=userDataSource.getUser(usuario,pwd);
                     if(!modelUserList.isEmpty()){
+                        if(chkRemember.isChecked()){
+                            date= new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
+                            util.saveUser(new ModelUser(modelUserList.get(0).id,usuario,pwd,date,"0",String.valueOf(lastTime)));
+                        }
                         Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_in),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
                         intent.putExtra("usuario",modelUserList.get(0).name);
+                        /*if(!TextUtils.isEmpty(shared_date)){
+                            intent.putExtra("date",shared_date);
+                        }else{
+                            intent.putExtra("date",date);
+                        }*/
                         startActivity(intent);
                         startService(new Intent(getApplicationContext(), ServiceTimer.class));
                     }else{
