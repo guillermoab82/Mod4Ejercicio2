@@ -27,16 +27,23 @@ android:layout_height="match_parent">
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/btnCloseSession"
+            android:text="@string/close_session"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
             android:id="@+id/activity_detalles_btnperfil"
             android:textAllCaps="false"
-            android:text="Ver Perfil"
+            android:text="@string/view_perfil"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/activity_detalles_btnlista"
             android:textAllCaps="false"
-            android:text="Lista Perfil"
+            android:text="@string/profile_list"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -45,5 +52,6 @@ android:layout_height="match_parent">
         android:id="@+id/activity_detalles_fldetalles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
+
 
 </LinearLayout>

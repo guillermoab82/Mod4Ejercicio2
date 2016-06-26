@@ -92,20 +92,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(!TextUtils.isEmpty(usuario) && !TextUtils.isEmpty(pwd)){//Nos importa que tanto el usuario como el pass no sean vacíos
                     List<ModelUser> modelUserList=userDataSource.getUser(usuario,pwd);
                     if(!modelUserList.isEmpty()){
+                        date= new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
                         if(chkRemember.isChecked()){
-                            date= new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
                             util.saveUser(new ModelUser(modelUserList.get(0).id,usuario,pwd,date,"0",String.valueOf(lastTime)));
+                        }else {
+                            util.saveUser(new ModelUser(0,"","",date,"0",String.valueOf(lastTime)));
                         }
                         Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_in),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),ActivityDetalles.class);
+                        intent.putExtra("id",modelUserList.get(0).id);
                         intent.putExtra("usuario",modelUserList.get(0).name);
-                        /*if(!TextUtils.isEmpty(shared_date)){
+                        intent.putExtra("pwd",modelUserList.get(0).pwd);
+                        intent.putExtra("ischk",chkRemember.isChecked());
+                        if(!TextUtils.isEmpty(shared_date)){
                             intent.putExtra("date",shared_date);
                         }else{
                             intent.putExtra("date",date);
-                        }*/
+                        }
+                        intent.putExtra("count_val",lastTime);
                         startActivity(intent);
                         startService(new Intent(getApplicationContext(), ServiceTimer.class));
+                        //finish();
                     }else{
                         Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_user),Toast.LENGTH_SHORT).show();
                     }

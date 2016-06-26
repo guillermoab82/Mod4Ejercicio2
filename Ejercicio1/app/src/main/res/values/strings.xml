@@ -22,4 +22,7 @@
     <string name="msj_error_user">User not found!!!</string>
     <string name="msj_error_data">There was an error loading data!!!</string>
     <string name="date">Last session</string>
+    <string name="close_session">Sing Off</string>
+    <string name="view_perfil">View Profile</string>
+    <string name="profile_list">Profile List</string>
 </resources>

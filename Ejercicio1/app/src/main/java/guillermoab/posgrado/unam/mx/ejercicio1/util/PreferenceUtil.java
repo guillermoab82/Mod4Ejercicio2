@@ -32,11 +32,14 @@ public class PreferenceUtil {
         String mUserDate = sp.getString("user_date",null);
         String mUserTime = sp.getString("timestamp",null);
         int id;
-        if(TextUtils.isEmpty(mUserID) || TextUtils.isEmpty(mUserDate) ){
-            return null;
+        if((TextUtils.isEmpty(mUserID) || TextUtils.isEmpty(mUserDate)) ){
+            if(TextUtils.isEmpty(mUserTime)){
+                return  null;
+            }else{
+                return new ModelUser(0,mUSerName,mUserPWD,mUserDate,"0",mUserTime);
+            }
         }else{
-            id=Integer.getInteger(mUserID);
-            return new ModelUser(id,mUSerName,mUserPWD,mUserDate,"0",mUserTime);
+            return new ModelUser(Integer.valueOf(mUserID),mUSerName,mUserPWD,mUserDate,"0",mUserTime);
         }
     }
 }

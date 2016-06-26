@@ -55,10 +55,10 @@ public class FragmentoLista extends Fragment{
                 //ModeloElemento modelItem2 = arreglodatos.get(position);
                 Intent intent=new Intent(getActivity(), ActivityDetallesMas.class);
                 intent.putExtra("Nombre",modelItem.elemento);
-                intent.putExtra("id",modelItem.id);
+                intent.putExtra("id",String.valueOf(modelItem.id));
                 intent.putExtra("resourceid",modelItem.resourceid);
                 startActivity(intent);
-                //Toast.makeText(getActivity(),modelItem2.id,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),String.valueOf(modelItem.id),Toast.LENGTH_SHORT).show();
             }
         });
         List<ModeloElemento> modelItemList = itemDataSource.getAllItems();
@@ -68,9 +68,9 @@ public class FragmentoLista extends Fragment{
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 AdaptadorListaElemento adapter = (AdaptadorListaElemento) parent.getAdapter();
                 final ModeloElemento modelItem = adapter.getItem(position);
-                String msg_del =  String.valueOf(R.string.delete_message);
+                String msg_del =  getResources().getString(R.string.delete_message);
                 new AlertDialog.Builder(getActivity())
-                        .setTitle(R.string.delete_title)
+                        .setTitle(getResources().getString(R.string.delete_title))
                         .setMessage(String.format(msg_del + " %s?",modelItem.elemento))
                         .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                             @Override

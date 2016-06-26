@@ -22,4 +22,7 @@
     <string name="msj_error_user">Usuario no registrado!!!</string>
     <string name="msj_error_data">Hubo un error al cargar los datos!!!</string>
     <string name="date">Última sesión</string>
+    <string name="close_session">Cerrar Sesión</string>
+    <string name="view_perfil">Ver Perfil</string>
+    <string name="profile_list">Lista Perfil</string>
 </resources>
