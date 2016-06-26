@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.putExtra("count_val",lastTime);
                         startActivity(intent);
                         startService(new Intent(getApplicationContext(), ServiceTimer.class));
-                        //finish();
+                        finish();
                     }else{
                         Toast.makeText(getApplicationContext(),getResources().getText(R.string.msj_error_user),Toast.LENGTH_SHORT).show();
                     }

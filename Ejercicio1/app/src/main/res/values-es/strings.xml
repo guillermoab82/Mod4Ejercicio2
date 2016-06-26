@@ -25,4 +25,5 @@
     <string name="close_session">Cerrar Sesión</string>
     <string name="view_perfil">Ver Perfil</string>
     <string name="profile_list">Lista Perfil</string>
+    <string name="close_app">Cerrar APP</string>
 </resources>

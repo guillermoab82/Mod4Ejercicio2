@@ -69,6 +69,7 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
             txtFecha = (TextView) findViewById(R.id.activity_detalles_txtsession);
             txtFecha.setText(getResources().getText(R.string.date)+" "+lastDate);
             findViewById(R.id.btnCloseSession).setOnClickListener(this);
+            findViewById(R.id.btnCloseApp).setOnClickListener(this);
         }else{
             Toast.makeText(getApplicationContext(),getResources().getText(R.string.NoData),Toast.LENGTH_SHORT).show();
             finish();
@@ -87,10 +88,18 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
             case R.id.btnCloseSession:
                 close_session();
                 break;
+            case R.id.btnCloseApp:
+                close_app();
+                break;
         }
     }
 
+    private void close_app() {
+        finish();
+    }
+
     private void close_session() {
+        chked=false;
         finish();
     }
 

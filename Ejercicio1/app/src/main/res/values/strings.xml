@@ -25,4 +25,5 @@
     <string name="close_session">Sing Off</string>
     <string name="view_perfil">View Profile</string>
     <string name="profile_list">Profile List</string>
+    <string name="close_app">Close APP</string>
 </resources>
