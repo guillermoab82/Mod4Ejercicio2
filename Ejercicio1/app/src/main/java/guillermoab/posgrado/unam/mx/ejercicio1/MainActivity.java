@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             intent.putExtra("date",date);
                         }
                         intent.putExtra("count_val",lastTime);
+                        intent.putExtra("new_date",date);
                         startActivity(intent);
                         startService(new Intent(getApplicationContext(), ServiceTimer.class));
                         finish();

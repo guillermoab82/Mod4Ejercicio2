@@ -34,6 +34,7 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
     private String pwd;
     private Boolean chked;
     private String lastDate;
+    private String newDate;
     private TextView txtTimer;
     private TextView txtFecha;
     private int counter;
@@ -60,6 +61,7 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
             lastDate=getIntent().getExtras().getString("date");
             counter2 = getIntent().getExtras().getInt("count_val");
             userID=getIntent().getExtras().getInt("id");
+            newDate=getIntent().getExtras().getString("new_date");
             txt.setText(getResources().getText(R.string.welcome)+ " "+ userName);
             btnPerfil=(Button) findViewById(R.id.activity_detalles_btnperfil);
             btnPerfil.setOnClickListener(this);
@@ -134,7 +136,7 @@ public class ActivityDetalles extends AppCompatActivity implements View.OnClickL
         Log.d(ServiceTimer.TAG,"OnDestroy, terminando servicio");
         stopService(new Intent(getApplicationContext(),ServiceTimer.class));
         PreferenceUtil util=new PreferenceUtil(getApplicationContext());
-        String date= new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
+        String date= newDate; //new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
         if(chked){
             util.saveUser(new ModelUser(userID,userName,pwd,date,"0",String.valueOf(counter)));
         }else{
